@@ -1,3 +1,4 @@
 [submodule "lib"]
 	path = lib
 	url = https://github.com/brennoo/libusual.git
+	branch = potential_issues
