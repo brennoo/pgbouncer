@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Ref. https://github.com/facebook/infer/issues/153
 set -ev
 
 # Install Opaml
@@ -13,6 +12,7 @@ eval `./opam config env`
 # Install infer (latest version)
 git clone https://github.com/facebook/infer.git
 cd infer/
-make -C infer java
+./build-infer.sh
+make install
 export PATH=`pwd`/infer/bin:$PATH
 cd ../
