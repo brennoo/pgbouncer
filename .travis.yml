@@ -23,11 +23,13 @@ env:
     - configure_args='--with-pam'
     - configure_args='--with-openssl'
     - configure_args='--without-openssl'
+before_script:
+  - test/install_infer.sh
 script: |
   set -e
   ./autogen.sh
   ./configure --prefix=$HOME/install --enable-cassert --enable-werror --without-cares $configure_args
-  make
+  infer -- make
   make install
   make dist
   tar -x -f pgbouncer-*.tar.gz

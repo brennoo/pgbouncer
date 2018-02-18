@@ -189,8 +189,7 @@ failed:
 	log_warning("sbuf_connect failed: %s", strerror(errno));
 
 	if (sock >= 0)
-		safe_close(sock);
-	sbuf->sock = 0;
+		close(sock);
 	sbuf_call_proto(sbuf, SBUF_EV_CONNECT_FAILED);
 	return false;
 }

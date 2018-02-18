@@ -24,7 +24,7 @@
 
 void pktbuf_free(PktBuf *buf)
 {
-	if (!buf || buf->fixed_buf)
+	if (!buf)
 		return;
 
 	log_debug("pktbuf_free(%p)", buf);

@@ -1328,7 +1328,7 @@ void forward_cancel_request(PgSocket *server)
 	SEND_CancelRequest(res, server, req->cancel_key);
 	if (!res)
 		log_warning("sending cancel request failed: %s", strerror(errno));
-
+	if (req)
 	change_client_state(req, CL_JUSTFREE);
 }
 

@@ -602,7 +602,8 @@ static bool parse_line(struct HBA *hba, struct TokParser *tp, int linenr, const 
 	list_append(&hba->rules, &rule->node);
 	return true;
 failed:
-	rule_free(rule);
+	if (rule)
+		rule_free(rule);
 	return false;
 }
 
