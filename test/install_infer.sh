@@ -11,8 +11,8 @@ eval `./opam config env`
 
 # Install infer (latest version)
 git clone https://github.com/facebook/infer.git
-cd infer/
 export PATH=`pwd`:$PATH
+cd infer/
 ./build-infer.sh
 export PATH=`pwd`/infer/bin:$PATH
 cd ../
