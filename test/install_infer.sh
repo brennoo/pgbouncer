@@ -13,6 +13,6 @@ eval `./opam config env`
 git clone https://github.com/facebook/infer.git
 export PATH=`pwd`:$PATH
 cd infer/
-./build-infer.sh -y
+./build-infer.sh clang -y
 export PATH=`pwd`/infer/bin:$PATH
 cd ../
